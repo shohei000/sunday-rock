@@ -1,0 +1,423 @@
+@charset "UTF-8";
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+    -webkit-text-size-adjust: 100%;/*スマホ文字拡大対策*/
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    letter-spacing: 1px;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+ul,
+ul li {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  background: linear-gradient(to right, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89));
+  color: #fff;
+  z-index: 50;
+}
+.header h1{
+  padding: 15px 0;
+  display: inline-block;
+  padding-left: 27px;
+  background: url(/img/network.svg) no-repeat left center;
+  background-size: 18px;
+}
+
+.contents{
+  padding-top: 60px;
+}
+
+.cat-tab{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  height: 45px;
+  line-height: 45px;
+  z-index: 20;
+}
+.cat-tab li{
+  width: 50%;
+  text-align: center;
+  color: #fff;
+}
+.cat-tab li[data-tab="sansen"],
+.cat-tab li[data-tab="suki"]{
+  width: 40%;
+  background-color: #C0C0C0;
+}
+.cat-tab li[data-tab="sansen"].is-active {  background-color: #4274c1; }
+.cat-tab li[data-tab="suki"].is-active { background-color: #ea6262; }
+.thread-create{
+  background-color: #4274c1;
+}
+.cat-tab li[data-tab="sansen"].is-active + .thread-create{
+  background-color: #4274c1;
+}
+.cat-tab li[data-tab="suki"].is-active + .thread-create{
+  background-color: #ea6262;
+}
+
+.cat-tab li[data-thread-create]{
+  width: 20%;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cat-tab li[data-thread-create].is-sansen{
+  background-color: #4274c1;
+}
+.cat-tab li[data-thread-create].is-suki{
+  background-color: #ea6262;
+}
+
+.threads{
+  padding-bottom: 110px;
+}
+.threads li a{
+  position: relative;
+  display: block;
+  padding: 20px 10px;
+  position: relative;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+.threads li a:after{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  content: "";
+  width: 22px;
+  height: 20px;
+  background: url(/img/comments.svg) no-repeat;
+  z-index: 20;
+  display: block;
+  background-size: cover;
+}
+.threads-btns{
+  margin-top: 10px;
+}
+.threads-btn{
+  background: red;
+  display: inline-block;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.threads-btn--talk{
+  background-color: #4274c1;
+}
+.threads-btn--live{
+  background-color: #ea6262;
+}
+
+
+.message{
+  padding-bottom: 60px;
+}
+.message li {
+  padding: 0 10px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.user-name{
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 4px;
+}
+.user-name:before{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url(/img/user.svg) no-repeat;
+}
+.time{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  color: #6d6d6d;
+}
+
+
+.thread-form{
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 10000;
+}
+.btn{
+  display: block;
+  text-align: center;
+  width: 60%;
+  margin: 20px auto 0 auto;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 13px 0;
+  background-color: #ea6262;
+}
+.btn[data-btn-cat="sansen"]{
+  background-color: #4274c1;
+}
+.btn[data-btn-cat="suki"]{
+  background-color: #ea6262;
+}
+.modal-wrapper{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 110;
+}
+.modal-inner{
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 100;
+}
+.thread-input{
+  background-color: #fff;
+  padding: 15px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.close{
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: #fff;
+  z-index: 20;
+}
+
+
+.thread-create{
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #ea6262;
+  color: #fff;
+  font-size: 30px;
+  z-index: 20;
+  display: block;
+}
+.thread-create--message{
+  bottom: 70px;
+  background-color: #4AB3F4;
+}
+.thread-create--message img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 26px;
+}
+
+
+
+
+
+
+.formArea{
+  position: fixed;
+  width: calc(100% - 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+  height: 35px;
+  background-color: #fff;
+  z-index: 10;
+}
+.formArea.focus{
+  top: 70%;
+}
+.formArea .formAreaInner {
+  display: flex;
+  left: 0;
+  width: 100%;
+}
+.inputArea{
+  width: 82%;
+  border: 1px solid #ccc;
+  margin-right: 2%;
+  padding: 5px;
+  font-size: 16px;
+}
+.submitBtn{
+  width: 16%;
+  padding: 3px 10px;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #45a5e0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
