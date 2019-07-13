@@ -11,7 +11,7 @@
   <meta property="og:description" content="邦ロック好きな人と繋がりたい！！！気になった人お迎えします" />
   <meta property="og:site_name" content="http://sunday-rock.site/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:image" content="/img/ogp.png" />
+  <meta property="og:image" content="http://sunday-rock.site/img/ogp.png" />
 
 </head>
 <body>
