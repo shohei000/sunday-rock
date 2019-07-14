@@ -22,6 +22,7 @@
 
 
   <header class="header">
+    <a href="/" class="goto-arrow"><img src="/img/left-arrow.svg" alt=""></a>
     <h1>{{ $thread_title }}について話そう！</h1>
   </header>
 
@@ -79,11 +80,13 @@
             message: this.message,
             thread_id
           };
-          axios.post(url, params)
-          .then((response) => {
-            // 成功したらメッセージをクリア
-            this.message = '';
-          });
+          if(this.message !== ''){
+            axios.post(url, params)
+            .then((response) => {
+              // 成功したらメッセージをクリア
+              this.message = '';
+            });
+          }
         }
       },
       mounted() {
@@ -97,7 +100,7 @@
   </script>
   <script>
     $(function(){
-
+      $('body, html').animate({ scrollTop: $('body').height() }, 500);
       $('#message').focusin(function(e) {
         $(this).css('background-color', '#ffc');
         $('#formArea').css('margin-bottom', '50vw');

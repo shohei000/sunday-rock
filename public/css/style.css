@@ -137,6 +137,18 @@ input, button, textarea, select {
   background-size: 18px;
 }
 
+.goto-arrow{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+}
+.goto-arrow img{
+  width: 100%;
+  display: block;
+}
+
 .contents{
   padding-top: 60px;
 }
