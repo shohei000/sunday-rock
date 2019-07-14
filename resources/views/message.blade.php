@@ -22,7 +22,7 @@
 
 
   <header class="header">
-    <h1>{{ $thread_title }}</h1>
+    <h1>{{ $thread_title }}について話そう！</h1>
   </header>
 
   <div id="chat">
@@ -91,6 +91,20 @@
           this.getMessages(); // メッセージを再読込
         });
       }
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script>
+    $(function(){
+
+      $('#message').focusin(function(e) {
+        $(this).css('background-color', '#ffc');
+        $('#formArea').css('bottom', '30%');
+      }).focusout(function(e) {
+        $(this).css('background-color', '#fff');
+        $('#formArea').css('bottom', '0');
+      });
+
     });
   </script>
 </body>
