@@ -34,6 +34,9 @@
 
 <div class="modal-wrapper">
   <div class="modal-inner">
+    <div class="info">
+      <div class="info-title">好きなアーティストの<br>トークルームを作ろう！</div>
+    </div>
     <form action="/thread/create" method="post" class="thread-form">
       {{ csrf_field() }}
       <input type="text" name="title" placeholder="アーティスト名" class="thread-input">
@@ -51,6 +54,7 @@
         $('.modal-wrapper').fadeIn();
       });
       $('body').on('click', '.close', function(e){
+        e.stopPropagation();
         $('.modal-wrapper').fadeOut();
       });
       $('.btn').on('click',function(e){

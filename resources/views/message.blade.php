@@ -1,5 +1,6 @@
 <?php
   $url = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  $thread_title_hash = preg_replace("/( |　)/", "", $thread_title );
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,7 +12,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <meta property="og:title" content="邦ロック好きと繋がりたい" />
-  <meta property="og:description" content="邦ロック好きな人と繋がりたい！！！気になった人お迎えします" />
+  <meta property="og:description" content="{{$thread_title}}好き語ろう〜！！！" />
   <meta property="og:site_name" content="http://sunday-rock.site/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:image" content="http://sunday-rock.site/img/ogp.png" />
@@ -39,7 +40,7 @@
     <div data-thread-create class="thread-create thread-create--message">
      
       <a 
-        href="https://twitter.com/intent/tweet?url=<?php echo $url ?>&hashtags=日曜日だし邦ロック好きな人と繋がりたい,日曜日だし邦rock好きな人と繋がりたい,邦ロック好きな人と繋がりたい"
+        href="https://twitter.com/intent/tweet?url=<?php echo $url ?>&hashtags=日曜日だし邦ロック好きな人と繋がりたい,日曜日だし邦rock好きな人と繋がりたい,邦ロック好きな人と繋がりたい,<?php echo $thread_title_hash; ?>"
         class="twitter-share-button"
       ><img src="/img/icon_twitter_white.svg" alt=""></a>
     </div>
