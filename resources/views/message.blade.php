@@ -100,7 +100,7 @@
 
       $('#message').focusin(function(e) {
         $(this).css('background-color', '#ffc');
-        $('#formArea').css('margin-bottom', '60vw');
+        $('#formArea').css('margin-bottom', '50vw');
       }).focusout(function(e) {
         setTimeout(() => {
           $(this).css('background-color', '#fff');
