@@ -12,7 +12,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <meta property="og:title" content="{{$thread_title}}好き集まれ〜！" />
-  <meta property="og:description" content="{{$thread_title}}好き語ろう〜！！！" />
+  <meta property="og:description" content="" />
   <meta property="og:site_name" content="http://sunday-rock.site/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:image" content="http://sunday-rock.site/img/ogp.png" />

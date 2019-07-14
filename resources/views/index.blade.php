@@ -8,7 +8,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   
   <meta property="og:title" content="邦ロック好きと繋がりたい" />
-  <meta property="og:description" content="邦ロック好きな人と繋がりたい！！！気になった人お迎えします" />
+  <meta property="og:description" content="好きなアーティストについて話そう〜！" />
   <meta property="og:site_name" content="http://sunday-rock.site/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:image" content="http://sunday-rock.site/img/ogp.png" />
