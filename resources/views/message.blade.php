@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>{{ $thread_title }} ｜　邦ロック好きと繋がりたい</title>
   <link rel="stylesheet" href="/css/style.css">
   <meta name="viewport" content="width=device-width">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -53,6 +53,7 @@
     </div>
   </div>
   
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="/js/app.js"></script>
   <script>
     let thread_id = {{$thread_id}};
@@ -89,20 +90,25 @@
         this.getMessages();
         Echo.channel('chat').listen('MessageCreated', (e) => {
           this.getMessages(); // メッセージを再読込
+          $('body, html').animate({ scrollTop: $('body').height() }, 500);
         });
       }
     });
   </script>
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script>
     $(function(){
 
       $('#message').focusin(function(e) {
         $(this).css('background-color', '#ffc');
-        $('#formArea').css('bottom', '30%');
+        $('#formArea').css('margin-bottom', '60vw');
       }).focusout(function(e) {
-        $(this).css('background-color', '#fff');
-        $('#formArea').css('bottom', '0');
+        setTimeout(() => {
+          $(this).css('background-color', '#fff');
+          $('#formArea').css('margin-bottom', '0');
+        }, 100)
+        setTimeout(() => {
+          $('body, html').animate({ scrollTop: $('body').height() }, 500);
+        }, 700)
       });
 
     });
