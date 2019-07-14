@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <meta property="og:title" content="邦ロック好きと繋がりたい" />
+  <meta property="og:title" content="{{$thread_title}}好き集まれ〜！" />
   <meta property="og:description" content="{{$thread_title}}好き語ろう〜！！！" />
   <meta property="og:site_name" content="http://sunday-rock.site/" />
   <meta name="twitter:card" content="summary_large_image" />
